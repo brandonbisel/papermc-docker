@@ -203,3 +203,19 @@ docker build --build-arg PAPERMC_PROJECT="velocity" --pull --tag "$IMAGE_NAME"
 ```bash
 docker build --build-arg PAPERMC_PROJECT="waterfall" --pull --tag "$IMAGE_NAME"
 ```
+### Additional build arguments
+- `USER`
+  - Username to use for non-privileged execution user
+  - Default: `papermc`
+- `GROUP`
+  - Group name to use as primary group for non-privilged execution user
+  - Default: `papermc`
+- `UID`
+  - uid to use for non-privileged execution user
+  - Default: `1001`
+- `GID`
+  - gid to use for non-privileged execution user's primary group
+  - Default: `1001`
+- `JRE_PACKAGE`
+  - Java Runtime Enviroment package to install during build (`apk add ${JRE_PACKAGE}`)
+  - Default: `openjdk21-jre`
