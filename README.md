@@ -160,7 +160,7 @@ networks:
 services:
   papermc_1:
     container_name: papermc_1
-    image: "registry.biselfamily.net/beezlesoft/papermc-docker/paper:latest"
+    image: "brandonbisel/papermc-paper:latest"
     volumes:
     - "/opt/docker/papermc_1/paper:/opt/papermc/paper"
     restart: unless-stopped
@@ -174,7 +174,7 @@ services:
 
   velocity_1:
     container_name: velocity_1
-    image: "registry.biselfamily.net/beezlesoft/papermc-docker/velocity:latest"
+    image: "brandonbisel/papermc-velocity:latest"
     volumes:
     - "/opt/docker/velocity_1/velocity:/opt/papermc/velocity"
     restart: unless-stopped
