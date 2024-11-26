@@ -1,2 +1,2 @@
 #! /bin/bash
-docker build --build-arg PAPERMC_PROJECT="$PAPERMC_PROJECT" --pull -t "$DOCKER_IMAGE" .
+docker build --build-arg PAPERMC_PROJECT="$PAPERMC_PROJECT" --pull -t "$IMAGE_NAME" .
