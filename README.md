@@ -185,3 +185,21 @@ services:
     environment:
       PAPERMC_PROJECT_RAM: "1G"
 ```
+
+## Build
+This project is set up to build Paper, Velocity, and Waterfall, all from the same `Dockerfile`. The `papermc_launcher.sh` script is copied to `/opt/papermc/`, and the contents of the respective project directory (`$PAPERMC_PROJECT`) are copied to `/opt/papermc/papermc_setup/`, to be copied into the `/opt/papermc/$PAPERMC_PROJECT/` volume during the first startup.
+
+#### Paper
+```bash
+docker build --build-arg PAPERMC_PROJECT="paper" --pull --tag "$IMAGE_NAME"
+```
+
+#### Velocity
+```bash
+docker build --build-arg PAPERMC_PROJECT="velocity" --pull --tag "$IMAGE_NAME"
+```
+
+#### Waterfall
+```bash
+docker build --build-arg PAPERMC_PROJECT="waterfall" --pull --tag "$IMAGE_NAME"
+```
