@@ -3,8 +3,7 @@
 
 
 FROM alpine:latest
-ENV PAPERMC_PROJECT="paper"
-ARG PAPERMC_PROJECT=${PAPERMC_PROJECT}
+ARG PAPERMC_PROJECT=paper
 ARG USER=papermc
 ARG GROUP=papermc
 ARG UID=1001
@@ -18,7 +17,8 @@ ENV PAPERMC_PROJECT_VERSION="latest" \
     PAPERMC_PROJECT_API="https://papermc.io/api/v2/projects" \
     EULA="false" \
     PAPERMC_PROJECT_RAM="" \
-    JAVA_OPTS=""
+    JAVA_OPTS="" \
+    PAPERMC_PROJECT=$PAPERMC_PROJECT
 
 # Install dependencies
 RUN <<EOL
