@@ -1,3 +1,3 @@
 #! /bin/bash
 docker buildx create --name container --driver=docker-container --driver-opt=image=moby/buildkit:latest --use --bootstrap
-docker buildx build --build-arg PAPERMC_PROJECT="$PAPERMC_PROJECT" --pull --tag "$IMAGE_NAME" --builder=container --provenance=mode=max --pull --push .
+docker buildx build --build-arg PAPERMC_PROJECT="$PAPERMC_PROJECT" --pull --tag "$IMAGE_NAME" --builder=container --provenance=mode=max --sbom=true --pull --push .
