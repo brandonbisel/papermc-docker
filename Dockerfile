@@ -3,7 +3,7 @@
 
 
 FROM alpine:latest
-
+ENV PAPERMC_PROJECT="paper"
 ARG PAPERMC_PROJECT=${PAPERMC_PROJECT}
 ARG USER=papermc
 ARG GROUP=papermc
@@ -45,10 +45,10 @@ PAPERMC_PROJECT=${PAPERMC_PROJECT}
 export PAPERMC_PROJECT
 EOF
 RUN <<EOL
-    mkdir ./setup &&
-    chown ${UID}:${GID} -R ./setup
+    mkdir ./papermc_setup &&
+    chown ${UID}:${GID} -R ./papermc_setup
 EOL
-COPY --chmod=554 ${PAPERMC_PROJECT}/* ./setup/
+COPY --chmod=554 ${PAPERMC_PROJECT}/* ./papermc_setup/
 RUN <<EOL
     mkdir ./${PAPERMC_PROJECT}
     chown ${UID}:${GID} -R ./${PAPERMC_PROJECT}

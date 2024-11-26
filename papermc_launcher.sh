@@ -71,6 +71,6 @@ fi
 
 # Start the server
 export PAPERMC_PROJECT_JAR
-cp -nR ./setup/* "${PAPERMC_PROJECT}/"
+cp -nR ./papermc_setup/* "${PAPERMC_PROJECT}/"
 cd "/opt/papermc/${PAPERMC_PROJECT}"
 exec ./start.sh
