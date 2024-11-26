@@ -1,2 +1,2 @@
 #! /bin/bash
-docker build --build-arg PAPERMC_PROJECT="$PAPERMC_PROJECT" --pull -t "$IMAGE_NAME" .
+docker buildx build --build-arg PAPERMC_PROJECT="$PAPERMC_PROJECT" --pull --tag "$IMAGE_NAME" --provenance=mode=max .
